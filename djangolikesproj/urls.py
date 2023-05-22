@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-#from rating.views import location_rating
 urlpatterns = [
     #path('rating/<str:location_name>/', location_rating, name='location_rating'),
     path('ratings/', include('ratings.urls')),

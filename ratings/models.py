@@ -5,6 +5,7 @@ from django.utils import timezone
 class Location(models.Model):
     id = models.AutoField(primary_key=True)
     location_name = models.CharField('Местоположение', max_length=50)
+    location_header = models.CharField('Заголовок', max_length=100, null=True)
     main_image = models.ImageField(upload_to='location_images/', null=True)
     like_image = models.ImageField(upload_to='location_images/', blank=True, null=True)
     dislike_image = models.ImageField(upload_to='location_images/', blank=True, null=True)
