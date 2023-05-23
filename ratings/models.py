@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from colorful.fields import RGBColorField
 
 # Create your models here.
 class Location(models.Model):
@@ -8,6 +9,8 @@ class Location(models.Model):
     location_name = models.CharField('Местоположение', max_length=50)
     location_link = models.CharField('Ссылка на страницу', max_length=200, blank=True, null=True, editable=False)
     location_header = models.CharField('Заголовок', max_length=100, null=True)
+    location_header_fs = models.IntegerField(default=30)
+    header_color = RGBColorField('Цвет текста', null=True)
     main_image = models.ImageField(upload_to='location_images/', null=True)
     like_image = models.ImageField(upload_to='location_images/', blank=True, null=True)
     dislike_image = models.ImageField(upload_to='location_images/', blank=True, null=True)
